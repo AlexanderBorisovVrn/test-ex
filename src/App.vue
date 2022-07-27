@@ -1,6 +1,9 @@
 <template>
+
   <div>
-    {{docs}}
+    <div :key="i" v-for="(doc,i) of docs">
+        {{doc.title}}
+    </div>
   </div>
 </template>
 
@@ -17,7 +20,7 @@ export default {
   },
   computed:{
     docs(){
-      return this.data?.docs.map(data=>data)
+      return this.data?.docs
     }
   },
   mounted(){
